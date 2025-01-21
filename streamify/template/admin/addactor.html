@@ -1,0 +1,47 @@
+{% extends 'base3.html' %}
+
+{% block title %}
+
+Add Actor
+
+{% endblock title %}
+
+{% block content %}
+
+
+
+    <div class="float-container">
+
+      <div class="container">
+        <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;"> 
+          <div class="card p-4 shadow-lg" style="max-width: 500px; width: 100%;">
+            <form  method="POST">
+              {% csrf_token %} 
+              <h2 class="mb-4 text-center">Add New Actor</h2>
+              <div class="container">
+                  <div class="mb-3">
+                      <label for="name" class="form-label">Actor Name</label>
+                      <input type="text" class="form-control" id="actorname" name="actorname">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="dateofbirth" class="form-label"> Date of Birth</label>
+                        <input type="date" class="form-control" id="dob" name="dob">
+                      </div>
+                    
+                   
+                    <div class="mb-3">
+                        <label for="awards" class="form-label"> Awards</label>
+                        <input type="number" class="form-control" id="awards" name="awards">
+                      </div>
+                    <div class="mb-3">
+                        <label for="gender" class="form-label"> Gender</label>
+                        <input type="text" class="form-control" id="gender" name="gender">
+                      </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                  </form>
+              </div>
+        </div>
+          </div>
+      </div>
+{% endblock content %}

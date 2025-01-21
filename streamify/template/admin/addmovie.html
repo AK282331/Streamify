@@ -1,0 +1,91 @@
+<!-- Ask sir how to convert the genre name into an id means when the admin will add new movie and enter genre name it should reflect id in the table and 
+ if we have to add multiple genre how to add -->
+
+ {% extends 'base3.html' %}
+
+{% block title %}
+
+Add Movie
+
+{% endblock title %}
+
+{% block content %}
+
+<body class="bg-light">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+      <div class="card p-4 shadow-lg" style="max-width: 800px; width: 100%;">
+          <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              <h2 class="mb-4 text-center">Add New Movie</h2>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="mb-3">
+                          <label for="moviename" class="form-label">Movie Name</label>
+                          <input type="text" class="form-control" id="moviename" name="moviename">
+                      </div>
+                      <div class="mb-3">
+                          <label for="duration" class="form-label">Duration</label>
+                          <input type="time" class="form-control" id="duration" name="duration">
+                      </div>
+                      <div class="mb-3">
+                          <label for="ratings" class="form-label">Ratings</label>
+                          <input type="text" class="form-control" id="ratings" name="ratings">
+                      </div>
+                      <div class="mb-3">
+                          <label for="release" class="form-label">Release Date</label>
+                          <input type="date" class="form-control" id="release" name="release">
+                      </div>
+                      <div class="mb-3">
+                          <label for="ms" class="form-label">Movie / Series</label>
+                          <input type="text" class="form-control" id="ms" name="ms">
+                      </div>
+                      <div class="mb-3">
+                          <label for="genre1" class="form-label">Genre 1</label>
+                          <input type="text" class="form-control" id="genre1" name="genre1">
+                      </div>
+                      <div class="mb-3">
+                          <label for="genre2" class="form-label">Genre 2</label>
+                          <input type="text" class="form-control" id="genre2" name="genre2">
+                      </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="mb-3">
+                          <label for="genre3" class="form-label">Genre 3</label>
+                          <input type="text" class="form-control" id="genre3" name="genre3">
+                      </div>
+                      <div class="mb-3">
+                          <label for="genre4" class="form-label">Genre 4</label>
+                          <input type="text" class="form-control" id="genre4" name="genre4">
+                      </div>
+                      <div class="mb-3">
+                          <label for="actor1" class="form-label">Actor 1</label>
+                          <input type="text" class="form-control" id="actor1" name="actor1">
+                      </div>
+                      <div class="mb-3">
+                          <label for="actor2" class="form-label">Actor 2</label>
+                          <input type="text" class="form-control" id="actor2" name="actor2">
+                      </div>
+                      <div class="mb-3">
+                          <label for="actor3" class="form-label">Actor 3</label>
+                          <input type="text" class="form-control" id="actor3" name="actor3">
+                      </div>
+                      <div class="mb-3">
+                          <label for="actor4" class="form-label">Actor 4</label>
+                          <input type="text" class="form-control" id="actor4" name="actor4">
+                      </div>
+                      <div class="mb-3">
+                        <label for="image" class="form-label">Upload Image</label>
+                        <input type="file" class="form-control" id="image" name="image">
+                    </div>
+                  </div>
+              </div>
+              <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+          </form>
+      </div>
+  </div>
+</body>
+
+
+{% endblock content %}

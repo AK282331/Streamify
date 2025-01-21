@@ -1,0 +1,95 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block title %}
+Home Page
+{% endblock title %}
+
+
+{% block content %}
+
+<div class=" fluid-container" style="padding: 0px;">
+
+  <div class="fluid-container row" style="margin-left: 10px; margin-top: 20px;">
+    <div class="col-2">
+      <a href="{% url 'movies_prof' %}">
+        <p style="font-size: x-large; margin-bottom: 40px;"> Movies </p>
+      </a>
+      <a href="{% url 'series_prof' %}">
+        <p style="font-size: x-large; margin-bottom: 40px;"> Series </p>
+      </a>
+      <a href="{% url 'genres_prof' %}">
+        <p style="font-size: x-large; margin-bottom: 40px;"> Genre </p>
+      </a>
+      <a href="{% url 'mylist2' %}">
+        <p style="font-size: x-large; margin-bottom: 40px;"> My List </p>
+      </a>
+    </div>
+    <div class="col-10" style="padding: 0px;">
+<div class="row">
+  <div class="container" style="padding: 0px;">
+    <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel" >
+      <div class="carousel-inner" style="padding: 0px;">
+        <div class="carousel-item active" style="height: 500px; padding: 0px;" >
+          <img src="{% static 'images/f93607cc24271d9b6c9b73bf51fdc487.jpg' %}" class="d-block w-100 h-100" alt="...">
+        </div>
+        <div class="carousel-item" style="height: 500px;">
+          <img src="{% static 'images/wallpapersden.com_dark-netflix-show_3840x2160.jpg' %}" class="d-block w-100 h-100" alt="...">
+        </div>
+        <div class="carousel-item" style="height: 500px;">
+          <img src="{% static 'images/wallpapersden.com_the-creator-movie-poster_wxl.jpg' %}" class="d-block w-100 h-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+      
+    </div>
+  </div>
+  <div class="fluid-container row">
+    <p>
+    <h3>Movies Recommended For You </h3>
+    </p>
+    <div class="container text-center mt-4">
+      <div class="row">
+        {% for movie in movies %}
+        <div class="col-3">
+          <a href="{% url 'watch' movie.id %}"> <img src="{{movie.image.url}}" class="img-fluid"
+              style="height: 400px; width: 350px;"></a>
+            <h3>{{movie.movie_name}}</h3>
+            <a href="{% url 'mylist1'  movie.id %}"><p>Add to Mylist</p></a>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    <div class="fluid-container row">
+      <p>
+      <h3>Series Recommended For You </h3>
+      </p>
+      <div class="container text-center mt-4">
+        <div class="row">
+          {% for serie in series %}
+          <div class="col-3">
+            <a href="{% url 'watch' serie.id %}"> <img src="{{serie.image.url}}" class="img-fluid"
+                style="height: 400px; width: 350px; "></a>
+                <h3>{{serie.movie_name}}</h3>
+                <p>Add to Mylist</p>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {% endblock content %}

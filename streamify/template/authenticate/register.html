@@ -1,0 +1,80 @@
+{% extends 'basepage.html' %}
+{% load static %}
+
+{% block title %}
+Register on Streamify
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;"> 
+        <form method="POST" class="p-4 border rounded shadow-sm bg-light mx-auto mt-3 mb-3" style="max-width: 700px; background-color: white; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+            {% csrf_token %} 
+            <h2 class="text-center mb-4">User  Registration</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="FirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="FirstName" name="FirstName" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="LastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="LastName" name="LastName" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="birth" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="birth" name="birth" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="contact" class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="contact" name="contact" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="state" class="form-label">State</label>
+                        <input type="text" class="form-control" id="state" name="state" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="pincode" class="form-label">Pincode</label>
+                        <input type="number" class="form-control" id="pincode" name="pincode" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="genre" class="form-label">Genre Preference</label>
+                        <input type="text" class="form-control" id="genre" name="genre" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="gender" class="form-label">Gender</label>
+                        <input type="text" class="form-control" id="gender" name="gender" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Submit</button>
+            </div>
+          </form>
+    </div>
+</div>
+  
+
+    
+{% endblock content %}

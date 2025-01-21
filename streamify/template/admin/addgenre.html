@@ -1,0 +1,32 @@
+{% extends 'base3.html' %}
+{% load static %}
+{% block title %}
+
+Add Genre
+
+{% endblock title %}
+
+{% block content %}
+
+
+  <div class="float-container">
+
+    <div class="container">
+      <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;"> 
+        <div class="card p-4 shadow-lg" style="max-width: 500px; width: 100%;">
+          <form method="POST">
+              {% csrf_token %}
+              <h2 class="mb-4 text-center">Add New Genre</h2>
+              <div class="mb-3">
+                  <label for="genre" class="form-label">Genre Name</label>
+                  <input type="text" class="form-control" id="genrenew" name="genrenew" placeholder="Enter genre name">
+              </div>
+              <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary btn-block">Submit</button>
+              </div>
+          </form>
+      </div>
+        </div>
+    </div>
+    
+{% endblock content %}

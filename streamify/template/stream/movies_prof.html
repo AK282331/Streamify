@@ -1,0 +1,49 @@
+{% extends 'base2.html' %}
+
+
+{% block title %}
+
+Movies
+
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="fluid-container text-center mt-4">
+    <div class="container row mt-3">
+        <div class="col-2 mt-5">
+            <a href="{% url 'movies_prof' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> Movies </p>
+              </a>
+              <a href="{% url 'series_prof' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> Series </p>
+              </a>
+              <a href="{% url 'genres_prof' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> Genre </p>
+              </a>
+              <a href="{% url 'mylist2' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> My List </p>
+              </a>  
+        </div>
+        <div class="col-10">
+            <h1>Movies </h1>
+            <div class="row">
+                {% for movi in mo %}
+                        <div class="col-4">
+                            <a href="{% url 'watch' movi.id %}"> <img src="{{movi.image.url}}" class="img-fluid" style="height: 400px; width: 350px;"></a>
+                            <h3>{{movi.movie_name}}</h3>
+                            <p>Add to Mylist</p>
+                        </div>
+                {% endfor %}
+        </div>
+
+
+    </div>
+
+   
+      
+    </div>
+  </div>
+
+{% endblock content %}

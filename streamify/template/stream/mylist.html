@@ -1,0 +1,42 @@
+{% extends "base2.html" %}
+
+{% block title %}
+
+My List
+
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="fluid-container text-center mt-4">
+    <div class="container row mt-3">
+        <div class="col-2 mt-5">
+            <a href="{% url 'movies_prof' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> Movies </p>
+              </a>
+              <a href="{% url 'series_prof' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> Series </p>
+              </a>
+              <a href="{% url 'genres_prof' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> Genre </p>
+              </a>
+              <a href="{% url 'mylist2' %}">
+                <p style="font-size: x-large; margin-bottom: 40px;"> My List </p>
+              </a>  
+        </div>
+        <div class="col-10">
+            <div class="row">
+                    {% for list in mylis %}
+                    <div class="col-4">
+                        <a href="{% url 'watch' list.id %}"> <img src="{{list.image.url}}" class="img-fluid" style="height: 400px; width: 350px;"></a>
+                        <h3>{{list.movie_name}}</h3>
+                        
+                    </div>
+                    {% endfor %}
+      
+            </div>
+        </div>
+  </div>
+
+{% endblock content %}

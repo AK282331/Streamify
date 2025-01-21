@@ -1,0 +1,76 @@
+{% extends 'base2.html' %}
+
+{% load static %}
+
+{% block title %}
+Update Profile
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+  <form method="POST" class="p-4 border rounded shadow-sm bg-light mx-auto mt-3" style="max-width: 1000px; height: 700px; background-color: white; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+    {% csrf_token %} 
+    <h2 class="text-center mb-4" style="margin-top: 30px;">Profile Information</h2>
+    <div class="container">
+        <div class="row " style="margin-top: 80px;" >
+            <div class="col-md-6 mb-3">
+                <label for="FirstName" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="FirstName" name="FirstName" value="{{request.user.first_name}}" disabled>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="LastName" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="LastName" name="LastName" value="{{request.user.last_name}}" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="birth" class="form-label">Date of Birth:</label>
+                <input type="date" class="form-control" id="birth" name="birth" value="{{request.user.user_profile.dob|date:'Y-m-d'}}" disabled>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="{{request.user.username}}" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="password" class="form-label">New Password</label>
+                <input type="password" class="form-control" id="password" name="password" disabled>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="contact" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="contact" name="contact" value="{{request.user.user_profile.phone_number}}" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" value="{{request.user.user_profile.city}}" disabled>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control" id="state" name="state" value="{{request.user.user_profile.state}}" disabled>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <label for="pincode" class="form-label">Pincode</label>
+                <input type="number" class="form-control" id="pincode" name="pincode" value="{{request.user.user_profile.pincode}}" disabled>
+            </div>
+            <div class="col-md-6 mb-3">
+                <label for="genre" class="form-label">Genre Preference</label>
+                <input type="text" class="form-control" id="genre" name="genre" value="{{request.user.user_profile.Genre_preference}}" disabled>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i> <a href="{% url 'delete_user' %}" style="color: white; text-decoration: none;">Delete Profile</a></button>
+            <button type="submit" class="btn btn-info"><i class="fa-solid fa-pen"></i> <a href="{% url 'update_profile' %}" style="color: white; text-decoration: none;">Update Profile</a></button>
+        </div>
+    </div>
+</form>
+</div>
+
+
+{% endblock content %}
+

@@ -1,0 +1,41 @@
+{% extends 'basepage.html' %}
+{% load static %}
+
+{% block title %}
+Login to Streamify
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="float-container">
+
+  <div class="container">
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;"> 
+      <div class="card p-4 shadow-lg" style="width: 100%; max-width: 400px;">
+        <h2 class="text-center mb-4">Login to Streamify</h2>
+        <form method="POST">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required placeholder="Enter your password">
+          </div>
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-block">Log In</button>
+          </div>
+        </form>
+      </div>
+      </div>
+  </div>
+  
+  
+  </div>
+</div>
+
+
+
+{% endblock content %}
