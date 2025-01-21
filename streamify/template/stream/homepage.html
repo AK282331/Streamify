@@ -20,7 +20,7 @@ Home Page
       <a href="{% url 'genres_prof' %}">
         <p style="font-size: x-large; margin-bottom: 40px;"> Genre </p>
       </a>
-      <a href="{% url 'mylist2' %}">
+      <a href="{% url 'mylist' %}">
         <p style="font-size: x-large; margin-bottom: 40px;"> My List </p>
       </a>
     </div>
@@ -65,7 +65,7 @@ Home Page
           <a href="{% url 'watch' movie.id %}"> <img src="{{movie.image.url}}" class="img-fluid"
               style="height: 400px; width: 350px;"></a>
             <h3>{{movie.movie_name}}</h3>
-            <a href="{% url 'mylist1'  movie.id %}"><p>Add to Mylist</p></a>
+            <a href="{% url 'mylistmovies'  movie.id %}"><p>Add to Mylist</p></a>
         </div>
         {% endfor %}
 

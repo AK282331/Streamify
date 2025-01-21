@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import landingpage, homepage, stream_movies, series, genres, mylist1, profile, delete_user,update_profile, movies_prof, series_prof, genres_prof,watch,dashboard, mylist2
+from .views import landingpage, homepage, stream_movies, series, genres, mylist, profile, delete_user,update_profile, movies_prof, series_prof, genres_prof,watch,dashboard, mylistmovies
 
 urlpatterns = [
  path("", landingpage,name = "landingpage"),
@@ -8,8 +8,8 @@ urlpatterns = [
  path("movies", stream_movies, name = "movies"),
  path("series", series, name = "series"),
  path("genres", genres, name = "genres"),
- path("mylist<int:id>", mylist1, name = "mylist"),
- path("mylist2", mylist2, name = "mylist2"),
+ path("mylist", mylist, name = "mylist"),
+ path("mylistmovies/<int:id>", mylistmovies, name = "mylistmovies"),
  path("profile",profile, name="profile"),
  path("delete_user", delete_user, name="delete_user"),
  path("update_profile",update_profile, name="update_profile"),

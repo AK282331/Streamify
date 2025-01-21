@@ -32,14 +32,14 @@ def series(request):
 def genres(request):
     return redirect("register")
 
-def mylist1(request,id):
+def mylistmovies(request,id):
     myl = movies.objects.filter(id = id)
     context = {
         "mylis":myl
     }
     return render(request,'stream/mylist.html',context)
 
-def mylist2(request):
+def mylist(request):
     return render(request,'stream/mylist.html')
 
 def profile(request):
@@ -107,7 +107,7 @@ def watch(request,id):
     end_time = datetime.now() + timedelta(minutes=40)
     wat = watchlist(movie_id = movie_id, user_id = user.id, start_time = start_time, end_time = end_time)
     wat.save()
-    return redirect('mylist2')
+    return redirect('mylistmovies',id)
     
 def dashboard(request):
     return render(request,'stream/dashboard.html')
