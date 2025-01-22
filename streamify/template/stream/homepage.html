@@ -82,7 +82,7 @@ Home Page
             <a href="{% url 'watch' serie.id %}"> <img src="{{serie.image.url}}" class="img-fluid"
                 style="height: 400px; width: 350px; "></a>
                 <h3>{{serie.movie_name}}</h3>
-                <p>Add to Mylist</p>
+                <a href="{% url 'mylistmovies'  serie.id %}"><p>Add to Mylist</p></a>
           </div>
           {% endfor %}
 

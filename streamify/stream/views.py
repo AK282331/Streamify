@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
-from .models import user_profile, movies, watchlist
+from .models import user_profile, movies, watchlist,userlist,genre,movie_genre
 from datetime import datetime, timedelta
 
 # Create your views here.
@@ -33,14 +33,21 @@ def genres(request):
     return redirect("register")
 
 def mylistmovies(request,id):
-    myl = movies.objects.filter(id = id)
-    context = {
-        "mylis":myl
-    }
-    return render(request,'stream/mylist.html',context)
+    if userlist.objects.filter(movie_id=id).exists():
+        return redirect("mylist")
+    else:
+        u = userlist(user_id = request.user.id, movie_id = id )
+        u.save()
+        return redirect('homepage')
 
 def mylist(request):
-    return render(request,'stream/mylist.html')
+    li = userlist.objects.filter(user_id = request.user.id)
+    
+    context = {
+        "mylis":li
+    }
+    
+    return render(request,'stream/mylist.html',context)
 
 def profile(request):
     return render(request,'stream/profile.html')
@@ -97,6 +104,8 @@ def series_prof(request):
     return render(request,'stream/series_prof.html',context)
 
 def genres_prof(request):
+    
+    
     
     return render(request,'stream/genre_prof.html')
 

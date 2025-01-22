@@ -32,8 +32,8 @@ My List
             <div class="row">
                     {% for list in mylis %}
                     <div class="col-4">
-                        <a href="{% url 'watch' list.id %}"> <img src="{{list.image.url}}" class="img-fluid" style="height: 400px; width: 350px;"></a>
-                        <h3>{{list.movie_name}}</h3>
+                        <a href="{% url 'watch' list.movie.id %}"> <img src="{{list.movie.image.url}}" class="img-fluid" style="height: 400px; width: 350px;"></a>
+                        <h3>{{list.movie.movie_name}}</h3>
                         
                     </div>
                     {% endfor %}

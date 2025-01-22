@@ -63,4 +63,11 @@ class watchlist(models.Model):
   
   def __str__(self):
     return self.user
+  
+class userlist(models.Model):
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
+  movie = models.ForeignKey(movies, on_delete=models.CASCADE)
     
+    
+  def __str__(self):
+    return self.user.__str__()

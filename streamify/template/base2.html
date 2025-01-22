@@ -15,23 +15,17 @@
       <div class="container-fluid row" style="background-color: cadetblue;">
   
   
-        <div class="col-7">
+        <div class="col-9">
           <a href="{% url 'homepage' %}" class="text-decoration-none " style="font-size: 50px; font-weight: bold; color: white; font-family: fantasy;">STREAMIFY</a>
         </div>
-        <div class="col-5">
+        <div class="col-3">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a href="{% url 'profile' %}" class="text-decoration-none text-reset">
                   <p style="display: inline; margin-right: 50px; color: white; font-weight: bold; font-size: x-large;">PROFILE</p>
                 </a>
-                <a href="{% url 'dashboard' %}" class="text-decoration-none text-reset">
-                  <p style="display: inline; color: white; font-weight: bold; font-size: x-large;">DASHBOARD</p>
-                </a>
-                <a href="{% url 'register' %}" class="text-decoration-none text-reset">
-                  <p style="display: inline; margin-right: 50px; margin-left: 80px; color: white; font-weight: bold; font-size: x-large;">SEARCH</p>
-                </a>
-                <p style="display: inline; font-weight: bold; font-size: x-large; color: white;"><b>{{user.first_name}} !</b></p>
+                <p style="display: inline; font-weight: bold; font-size: x-large; color: white;"><b>Welcome {{user.first_name}} !</b></p>
               </li>
             </ul>
           </div>
