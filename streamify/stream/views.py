@@ -104,10 +104,28 @@ def series_prof(request):
     return render(request,'stream/series_prof.html',context)
 
 def genres_prof(request):
+    action = movie_genre.objects.filter(genre_id = 1)
+    adventure = movie_genre.objects.filter(genre_id = 2)
+    sci = movie_genre.objects.filter(genre_id = 3)
+    thriller = movie_genre.objects.filter(genre_id = 4)
+    superhero = movie_genre.objects.filter(genre_id = 5)
+    drama = movie_genre.objects.filter(genre_id = 6)
+    horror = movie_genre.objects.filter(genre_id = 7)
+    crime = movie_genre.objects.filter(genre_id = 8)    
+    fantasy = movie_genre.objects.filter(genre_id = 9)
+    context = {
+        "action":action,
+        "horror":horror,
+        "adventure":adventure,
+        "sci":sci,
+        "thriller":thriller,
+        "superhero":superhero,
+        "drama":drama,
+        "crime":crime,
+        "fantasy":fantasy
+    }
     
-    
-    
-    return render(request,'stream/genre_prof.html')
+    return render(request,'stream/genre_prof.html',context)
 
 def watch(request,id):
     movie_id = id

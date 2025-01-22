@@ -12,8 +12,106 @@ Genres
 
 <div class="fluid-container">
     <div class="fluid-container">
+        
+        <div class="row">
         <h3>Action</h3>
-    
+            {% for act in action %}
+            <div class="col-3">
+              <a href="{% url 'watch' act.id %}"> <img src="{{act.movie.image.url}}" class="img-fluid"
+                  style="height: 400px; width: 350px; "></a>
+                  <h3>{{act.movie_name}}</h3>
+                  <a href="{% url 'mylistmovies'  act.id %}"><p>Add to Mylist</p></a>
+            </div>
+            {% endfor %}
+        
+            <div class="row">
+                <h3>Horror</h3>
+                    {% for hor in horror %}
+                    <div class="col-3">
+                      <a href="{% url 'watch' hor.id %}"> <img src="{{hor.movie.image.url}}" class="img-fluid"
+                          style="height: 400px; width: 350px; "></a>
+                          <h3>{{act.movie_name}}</h3>
+                          <a href="{% url 'mylistmovies'  hor.id %}"><p>Add to Mylist</p></a>
+                    </div>
+                    {% endfor %}
+            
+            <div class="row">
+                <h3>Adventure</h3>
+                    {% for adv in adventure %}
+                    <div class="col-3">
+                      <a href="{% url 'watch' adv.id %}"> <img src="{{adv.movie.image.url}}" class="img-fluid"
+                          style="height: 400px; width: 350px; "></a>
+                          <h3>{{act.movie_name}}</h3>
+                          <a href="{% url 'mylistmovies'  adv.id %}"><p>Add to Mylist</p></a>
+                    </div>
+                    {% endfor %}
+            
+            <div class="row">
+                <h3>Sci-Fi</h3>
+                    {% for sc in sci %}
+                    <div class="col-3">
+                      <a href="{% url 'watch' sc.id %}"> <img src="{{sc.movie.image.url}}" class="img-fluid"
+                          style="height: 400px; width: 350px; "></a>
+                          <h3>{{act.movie_name}}</h3>
+                          <a href="{% url 'mylistmovies'  sc.id %}"><p>Add to Mylist</p></a>
+                    </div>
+                    {% endfor %}
+
+        <div class="row">
+                <h3>Thriller</h3>
+                    {% for thr in thriller %}
+                    <div class="col-3">
+                      <a href="{% url 'watch' thr.id %}"> <img src="{{thr.movie.image.url}}" class="img-fluid"
+                          style="height: 400px; width: 350px; "></a>
+                          <h3>{{act.movie_name}}</h3>
+                          <a href="{% url 'mylistmovies'  thr.id %}"><p>Add to Mylist</p></a>
+                    </div>
+                    {% endfor %}
+            
+        <div class="row">
+                <h3>SuperHero</h3>
+                    {% for super in superhero %}
+                    <div class="col-3">
+                      <a href="{% url 'watch' super.id %}"> <img src="{{super.movie.image.url}}" class="img-fluid"
+                          style="height: 400px; width: 350px; "></a>
+                          <h3>{{act.movie_name}}</h3>
+                          <a href="{% url 'mylistmovies'  super.id %}"><p>Add to Mylist</p></a>
+                    </div>
+                    {% endfor %}
+        <div class="row">
+            <h3>Drama</h3>
+                {% for dra in drama %}
+                <div class="col-3">
+                    <a href="{% url 'watch' dra.id %}"> <img src="{{dra.movie.image.url}}" class="img-fluid"
+                        style="height: 400px; width: 350px; "></a>
+                        <h3>{{act.movie_name}}</h3>
+                        <a href="{% url 'mylistmovies'  dra.id %}"><p>Add to Mylist</p></a>
+                </div>
+                {% endfor %}
+
+        <div class="row">
+            <h3>Crime</h3>
+                {% for cri in crime %}
+                <div class="col-3">
+                    <a href="{% url 'watch' cri.id %}"> <img src="{{cri.movie.image.url}}" class="img-fluid"
+                        style="height: 400px; width: 350px; "></a>
+                        <h3>{{act.movie_name}}</h3>
+                        <a href="{% url 'mylistmovies'  cri.id %}"><p>Add to Mylist</p></a>
+                </div>
+                {% endfor %}
+
+        <div class="row">
+            <h3>Fantasy</h3>
+                {% for fan in fantasy %}
+                <div class="col-3">
+                    <a href="{% url 'watch' fan.id %}"> <img src="{{fan.movie.image.url}}" class="img-fluid"
+                        style="height: 400px; width: 350px; "></a>
+                        <h3>{{act.movie_name}}</h3>
+                        <a href="{% url 'mylistmovies'  fan.id %}"><p>Add to Mylist</p></a>
+                </div>
+                {% endfor %}
+
+        
     </div>
 </div>
 

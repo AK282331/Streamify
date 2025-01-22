@@ -67,7 +67,7 @@ class watchlist(models.Model):
 class userlist(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   movie = models.ForeignKey(movies, on_delete=models.CASCADE)
-    
+  #add who created timestamp and user id, log table 
     
   def __str__(self):
     return self.user.__str__()
